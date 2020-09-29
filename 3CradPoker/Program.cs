@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _3CradPoker.Extensions;
 using _3CradPoker.ViewModels;
 
 namespace _3CradPoker
@@ -15,6 +16,10 @@ namespace _3CradPoker
                var deck = new Deck();
                var dealtCards
                     = deck.Deal(result);
+               dealtCards.ForEach(hand =>
+               {
+                 var what =   HandDeterminator.EvaluatePokerHand(hand.ToArray());
+               });
                Console.WriteLine("Hello World!");
            }
            else

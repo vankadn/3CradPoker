@@ -7,11 +7,15 @@ using _3CradPoker.ViewModels;
 
 namespace _3CradPoker.Extensions
 {
-    class HandDeterminator
+    public static class HandDeterminator
     {
         public static bool IsFlush(Card[] hand)
         {
-            hand = hand.OrderBy(item => Enumeration.FindByName<Rank>(item.Suit).Id).ToArray();
+            hand = hand.OrderBy(item =>
+            {
+                var findByName = Enumeration.FindByName<Suit>(item.Suit);
+                return findByName.Id;
+            }).ToArray();
 
             int maxCardIndex = hand.Length - 1;
 
