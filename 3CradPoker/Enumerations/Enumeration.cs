@@ -28,6 +28,15 @@ namespace _3CradPoker.Enumerations
             return fields.Select(f => f.GetValue(null)).Cast<T>();
         }
 
+        public static T FindByName<T>(string name) where T : Enumeration
+        {
+            return GetAll<T>().FirstOrDefault(x=>x.Name== name);
+        }
+
+        public static T FindById<T>(int id) where T : Enumeration
+        {
+            return GetAll<T>().FirstOrDefault(x => x.Id == id);
+        }
         public override bool Equals(object obj)
         {
             var otherValue = obj as Enumeration;
