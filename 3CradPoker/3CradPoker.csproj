@@ -6,8 +6,4 @@
     <RootNamespace>_3CradPoker</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
-  </ItemGroup>
-
 </Project>

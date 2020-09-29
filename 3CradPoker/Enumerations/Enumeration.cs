@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace _3CradPoker
+namespace _3CradPoker.Enumerations
 {
     public abstract class Enumeration : IComparable
     {
